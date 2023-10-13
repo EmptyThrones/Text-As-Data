@@ -1,0 +1,12 @@
+#REGEX - Finding patterns in strings
+
+df1$cinnamon_search <- str_extract_all(df1$clean_variable, "cinnamon")
+df1$cinnamon_count <- str_count(df1$clean_variable, "cinnamon")
+
+#Alright, so in the data cleaning page we loaded and cleaned a "Secret Baking Recipes" file. We cleaned up the survey responses so that they would be easier to read and search through and stored them as the clean_variable.
+#If this was a regular repository for a live project, instead of a general repository for code that I will copy and paste 100 times I would be very specific with my variable names. 
+#Best practice is to give your variables very unique names, that almost anyone without specialized knowledge will be able to tell what the heck they are. All of us are TIRED of dealing with legacy code, so help out the programmers that come after you. 
+#No more variable X1, name it NumberOfPies if you are counting the pies you have in inventory. 
+
+#Now that I am off of my soap box the first line of code extracts all strings that contain the word "cinnamon" and stores them as a seperate variable. The way we cleaned our data means that every sentence that has cinnamon is now stored in that variable, and another command to print it can be made to give it to us in a word doc. 
+#The second line of code counts how many times "cinnamon" appears in a response. This frequency measure is useful for longer written responses. If you know which respondants mention a topic you are interested repeatedly, you can prioritize reading those responses. 
