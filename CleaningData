@@ -5,6 +5,7 @@ library(tidyverse)
 #stringr and tidyverse are amazing!!!
 
 setwd("C:/Something/Something")
+df1 <-read.csv("SecretBakingRecipes.csv")
 #note to future self remember to replace something with the actual address of your working directory. 
 #If any random people are reading my code and judging me please sod off, I'm usually fielding phone calls or multitasking while programming to increase my sweet sweet productivity so simple things like this can slip through. 
 
@@ -13,3 +14,5 @@ df1$clean_variable <- stringr::str_replace_all(df1$clean_variable,"â¢","")
 df1$clean_variable <- textclean::add_missing_endmark(df1$clean_variable, replacement = "|", endmarks = c("."))
 df1$clean_variable <- stringr::str_replace_all(df1$clean_variable,"[^a-zA-Z\\.\\|]", " ")
 df1$clean_variable <- stringr::str_squish(df1$clean_variable)
+#Alright so what does this little block of code do? It takes a survey response from a dataframe, removes the special characters, the endmarks, extra spacing and such away.
+#You are left with neat sentences of machine readable text instead of bullet points that are hard to parse.
